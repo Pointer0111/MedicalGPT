@@ -4,6 +4,7 @@
 @description: Train R1 model with GRPO rl algo.
 """
 import os
+from collections import Counter
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Dict, Optional
@@ -16,8 +17,6 @@ from transformers.trainer_utils import get_last_checkpoint
 from transformers.integrations import is_deepspeed_zero3_enabled
 from trl import GRPOConfig, GRPOTrainer, ModelConfig, TrlParser
 from peft import LoraConfig, TaskType, get_peft_model
-from latex2sympy2_extended import NormalizationConfig
-from math_verify import LatexExtractionConfig, parse, verify
 
 os.environ["TOKENIZERS_PARALLELISM"] = "FALSE"
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
@@ -50,16 +49,32 @@ class ScriptArguments:
 
 
 def normalize_text(text):
-    """Normalize text by removing extra whitespace, converting to lowercase."""
     if text is None:
         return ""
-    # Remove extra whitespace and convert to lowercase
-    text = re.sub(r'\s+', ' ', text.strip().lower())
-    return text
+    return re.sub(r'\s+', ' ', text.strip().lower())
+
+
+def normalize_for_match(text):
+    text = normalize_text(text)
+    if not text:
+        return ""
+    return re.sub(r'[^\u4e00-\u9fffA-Za-z0-9]', '', text)
+
+
+def char_f1(pred, gold):
+    if not pred or not gold:
+        return 0.0
+    pred_counter = Counter(pred)
+    gold_counter = Counter(gold)
+    overlap = sum((pred_counter & gold_counter).values())
+    if overlap == 0:
+        return 0.0
+    precision = overlap / len(pred)
+    recall = overlap / len(gold)
+    return 2 * precision * recall / (precision + recall)
 
 
 def extract_answer(text):
-    """Extract content between <answer> tags."""
     if text is None:
         return ""
     match = re.search(r'<answer>(.*?)</answer>', text, re.DOTALL)
@@ -69,48 +84,31 @@ def extract_answer(text):
 
 
 def accuracy_reward(completions, answer, **kwargs):
-    """Reward function that checks if the completion is the same as the ground truth."""
     contents = [completion[0]["content"] for completion in completions]
     rewards = []
     for content, sol in zip(contents, answer):
-        if '####' in sol:
-            # for GSM8K
-            gold_parsed = parse(sol.split("####", 1)[-1].strip())
-            answer_parsed = parse(extract_answer(content))
-        else:
-            # First try latex parsing
-            gold_parsed = parse(
-                sol,
-                extraction_mode="first_match",
-                extraction_config=[LatexExtractionConfig()],
-            )
-            # We require the answer to be provided in correct latex (no malformed operators)
-            answer_parsed = parse(
-                content,
-                extraction_config=[
-                    LatexExtractionConfig(
-                        normalization_config=NormalizationConfig(
-                            nits=False,
-                            malformed_operators=False,
-                            basic_latex=True,
-                            equations=True,
-                            boxed="all",
-                            units=True,
-                        ),
-                        # Ensures that boxed is tried first
-                        boxed_match_priority=0,
-                        try_extract_without_anchor=False,
-                    )
-                ],
-                extraction_mode="first_match",
-            )
         try:
-            reward = float(verify(answer_parsed, gold_parsed))
+            predicted = normalize_for_match(extract_answer(content))
+            gold = normalize_for_match(sol)
+            if not predicted or not gold:
+                reward = 0.0
+            elif predicted == gold:
+                reward = 1.0
+            else:
+                contain_score = 1.0 if len(gold) >= 2 and gold in predicted else 0.0
+                reverse_contain_score = 0.8 if len(predicted) >= 2 and predicted in gold else 0.0
+                f1_score = char_f1(predicted, gold)
+                reward = max(f1_score, contain_score, reverse_contain_score)
+                reward = min(max(reward, 0.0), 1.0)
         except Exception as e:
-            logger.warning(f"Error in verification: {e}")
+            logger.warning(f"Error in accuracy reward: {e}")
             reward = 0.0
-        logger.debug(f"predict_answer: {content}, \nground_truth: {sol}, \n"
-                     f"answer_parsed: {answer_parsed}, gold_parsed: {gold_parsed}, reward: {reward}\n\n")
+        logger.debug(
+            f"predict_answer: {content}, \n"
+            f"ground_truth: {sol}, \n"
+            f"predicted_normalized: {normalize_for_match(extract_answer(content))}, "
+            f"gold_normalized: {normalize_for_match(sol)}, reward: {reward}\n\n"
+        )
         rewards.append(reward)
     logger.debug(f'accuracy rewards: {rewards}')
     return rewards
