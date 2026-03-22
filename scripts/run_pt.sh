@@ -1,10 +1,10 @@
 #!/bin/bash
 export PYTHONPATH=$PYTHONPATH:$(pwd):$(pwd)/src
 
-CUDA_VISIBLE_DEVICES=0,1 torchrun --nproc_per_node 2 training/pretraining.py \
+CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node 1 training/pretraining.py \
     --model_name_or_path /gz-fs/Qwen2.5-3B \
-    --train_file_dir /root/medical/pretrain \
-    --validation_file_dir /root/medical/pretrain \
+    --train_file_dir /root/medical/pretrain_tcm \
+    --validation_file_dir /root/medical/pretrain_tcm \
     --per_device_train_batch_size 4 \
     --per_device_eval_batch_size 4 \
     --do_train \
@@ -28,7 +28,7 @@ CUDA_VISIBLE_DEVICES=0,1 torchrun --nproc_per_node 2 training/pretraining.py \
     --preprocessing_num_workers 10 \
     --block_size 1024 \
     --packing True \
-    --output_dir outputs-pt-qwen-v1 \
+    --output_dir outputs-pt-qwen-tcm-v1 \
     --ddp_timeout 30000 \
     --logging_first_step True \
     --target_modules all \

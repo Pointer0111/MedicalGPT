@@ -1,10 +1,19 @@
 #!/bin/bash
 export PYTHONPATH=$PYTHONPATH:$(pwd):$(pwd)/src
 
-CUDA_VISIBLE_DEVICES=0,1 torchrun --nproc_per_node 2 training/supervised_finetuning.py \
-    --model_name_or_path /gz-fs/qwen-2.5-3b-pt \
-    --train_file_dir /root/medical/finetune_sharegpt \
-    --validation_file_dir /root/medical/finetune_sharegpt \
+source /etc/network_turbo
+if [ ! -f /root/medical/finetune_shennong_sharegpt/train.jsonl ]; then
+    python tools/convert_dataset.py \
+        --dataset_name michaelwzhu/ShenNong_TCM_Dataset \
+        --output_dir /root/medical/finetune_shennong_sharegpt \
+        --data_type auto \
+        --validation_ratio 0.01
+fi
+
+CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node 1 training/supervised_finetuning.py \
+    --model_name_or_path /gz-fs/Qwen2.5-3B-TCM-PT \
+    --train_file_dir /root/medical/finetune_shennong_sharegpt \
+    --validation_file_dir /root/medical/finetune_shennong_sharegpt \
     --per_device_train_batch_size 4 \
     --per_device_eval_batch_size 4 \
     --do_train \
