@@ -354,6 +354,11 @@ def grpo_train(
         model.config.use_cache = True
         logger.info("Gradient checkpointing disabled.")
 
+    if not hasattr(model, "warnings_issued"):
+        model.warnings_issued = {}
+    if hasattr(model, "base_model") and not hasattr(model.base_model, "warnings_issued"):
+        model.base_model.warnings_issued = model.warnings_issued
+
     # Initialize GRPO trainer with distributed training support
     trainer = GRPOTrainer(
         model=model,
