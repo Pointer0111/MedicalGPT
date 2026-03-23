@@ -9,7 +9,22 @@ if [ ! -f "/root/medical/grpo_tcm/train.jsonl" ]; then
 fi
 
 # 使用 SFT 合并后的中医模型进行 GRPO 训练
-CUDA_VISIBLE_DEVICES=0,1,2 torchrun --nproc_per_node 3 training/grpo_training.py \
+CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0,1}"
+NPROC_PER_NODE="${NPROC_PER_NODE:-2}"
+PER_DEVICE_TRAIN_BATCH_SIZE="${PER_DEVICE_TRAIN_BATCH_SIZE:-1}"
+PER_DEVICE_EVAL_BATCH_SIZE="${PER_DEVICE_EVAL_BATCH_SIZE:-1}"
+NUM_GENERATIONS="${NUM_GENERATIONS:-2}"
+GRADIENT_ACCUMULATION_STEPS="${GRADIENT_ACCUMULATION_STEPS:-2}"
+MAX_PROMPT_LENGTH="${MAX_PROMPT_LENGTH:-768}"
+MAX_COMPLETION_LENGTH="${MAX_COMPLETION_LENGTH:-384}"
+
+if ! python -c "import weave" >/dev/null 2>&1; then
+    echo "缺少依赖: weave"
+    echo "请先执行: pip install weave"
+    exit 1
+fi
+
+torchrun --nproc_per_node "${NPROC_PER_NODE}" training/grpo_training.py \
     --model_name_or_path /gz-fs/Qwen2.5-3B-TCM-SFT \
     --train_file_dir /root/medical/grpo_tcm \
     --train_samples -1 \
@@ -22,7 +37,7 @@ CUDA_VISIBLE_DEVICES=0,1,2 torchrun --nproc_per_node 3 training/grpo_training.py
     --bf16 True \
     --report_to tensorboard \
     --remove_unused_columns False \
-    --gradient_checkpointing False \
+    --gradient_checkpointing True \
     --beta 0.001 \
     --learning_rate 5.0e-7 \
     --lr_scheduler_type cosine \
@@ -36,11 +51,11 @@ CUDA_VISIBLE_DEVICES=0,1,2 torchrun --nproc_per_node 3 training/grpo_training.py
     --lora_r 16 \
     --lora_alpha 32 \
     --lora_dropout 0.1 \
-    --per_device_train_batch_size 1 \
-    --per_device_eval_batch_size 1 \
-    --num_generations 4 \
-    --gradient_accumulation_steps 1 \
-    --max_prompt_length 1024 \
-    --max_completion_length 512
+    --per_device_train_batch_size "${PER_DEVICE_TRAIN_BATCH_SIZE}" \
+    --per_device_eval_batch_size "${PER_DEVICE_EVAL_BATCH_SIZE}" \
+    --num_generations "${NUM_GENERATIONS}" \
+    --gradient_accumulation_steps "${GRADIENT_ACCUMULATION_STEPS}" \
+    --max_prompt_length "${MAX_PROMPT_LENGTH}" \
+    --max_completion_length "${MAX_COMPLETION_LENGTH}"
 
 echo "GRPO 训练完成!"
