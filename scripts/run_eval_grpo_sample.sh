@@ -3,8 +3,8 @@ set -euo pipefail
 export PYTHONPATH="${PYTHONPATH:-}:$(pwd):$(pwd)/src"
 
 DATA_FILE="/root/medical/grpo_tcm/valid.jsonl"
-SFT_MODEL="/gz-fs/Qwen2.5-3B-TCM-SFT"
-GRPO_MODEL="/gz-fs/Qwen2.5-3B-TCM-GRPO"
+SFT_MODEL="/root/autodl-fs/Qwen2.5-3B-TCM-SFT"
+GRPO_MODEL="/root/autodl-fs/Qwen2.5-3B-TCM-GRPO"
 OUTPUT_DIR="./outputs-grpo-eval"
 
 if [ ! -f "$DATA_FILE" ]; then

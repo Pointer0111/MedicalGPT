@@ -25,7 +25,7 @@ if ! python -c "import weave" >/dev/null 2>&1; then
 fi
 
 torchrun --nproc_per_node "${NPROC_PER_NODE}" training/grpo_training.py \
-    --model_name_or_path /gz-fs/Qwen2.5-3B-TCM-SFT \
+    --model_name_or_path /root/autodl-fs/Qwen2.5-3B-TCM-SFT \
     --train_file_dir /root/medical/grpo_tcm \
     --train_samples -1 \
     --max_steps -1 --num_train_epochs 1 \

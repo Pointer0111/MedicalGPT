@@ -2,7 +2,7 @@
 export PYTHONPATH=$PYTHONPATH:$(pwd):$(pwd)/src
 
 CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node 1 training/pretraining.py \
-    --model_name_or_path /gz-fs/Qwen2.5-3B \
+    --model_name_or_path /root/autodl-fs/Qwen2.5-3B \
     --train_file_dir /root/medical/pretrain_tcm \
     --validation_file_dir /root/medical/pretrain_tcm \
     --per_device_train_batch_size 4 \

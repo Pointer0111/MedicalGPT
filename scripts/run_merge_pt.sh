@@ -2,9 +2,9 @@
 set -euo pipefail
 export PYTHONPATH="${PYTHONPATH:-}:$(pwd):$(pwd)/src"
 
-BASE_MODEL="/gz-fs/Qwen2.5-3B-TCM-SFT"
+BASE_MODEL="/root/autodl-fs/Qwen2.5-3B-TCM-SFT"
 LORA_MODEL="./outputs-grpo-tcm-v2"
-OUTPUT_DIR="/gz-fs/Qwen2.5-3B-TCM-GRPO"
+OUTPUT_DIR="/root/autodl-fs/Qwen2.5-3B-TCM-GRPO"
 
 if [ ! -d "$BASE_MODEL" ]; then
     echo "未找到基础模型目录: $BASE_MODEL"

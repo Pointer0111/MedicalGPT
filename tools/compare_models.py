@@ -3,7 +3,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
 
 # 配置路径
-base_model_path = "/gz-fs/qwen-2.5-3b-pt"  # 使用二次预训练后的模型作为基座
+base_model_path = "/root/autodl-fs/qwen-2.5-3b-pt"  # 使用二次预训练后的模型作为基座
 lora_model_path = "./outputs-sft-qwen-v1" # SFT 训练后的 LoRA 权重
 
 # 测试用例 (医疗问诊对话)

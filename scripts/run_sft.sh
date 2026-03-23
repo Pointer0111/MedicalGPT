@@ -11,7 +11,7 @@ if [ ! -f /root/medical/finetune_shennong_sharegpt/train.jsonl ]; then
 fi
 
 CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node 1 training/supervised_finetuning.py \
-    --model_name_or_path /gz-fs/Qwen2.5-3B-TCM-PT \
+    --model_name_or_path /root/autodl-fs/Qwen2.5-3B-TCM-PT \
     --train_file_dir /root/medical/finetune_shennong_sharegpt \
     --validation_file_dir /root/medical/finetune_shennong_sharegpt \
     --per_device_train_batch_size 4 \
