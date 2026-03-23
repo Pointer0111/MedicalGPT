@@ -9,7 +9,7 @@ if [ ! -f "/root/medical/grpo_tcm/train.jsonl" ]; then
 fi
 
 # 使用 SFT 合并后的中医模型进行 GRPO 训练
-CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc_per_node 4 training/grpo_training.py \
+CUDA_VISIBLE_DEVICES=0,1,2 torchrun --nproc_per_node 3 training/grpo_training.py \
     --model_name_or_path /gz-fs/Qwen2.5-3B-TCM-SFT \
     --train_file_dir /root/medical/grpo_tcm \
     --train_samples -1 \
