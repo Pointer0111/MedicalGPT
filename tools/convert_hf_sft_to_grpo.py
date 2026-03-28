@@ -1,5 +1,6 @@
 import argparse
 import os
+import time
 
 from datasets import concatenate_datasets, get_dataset_config_names, load_dataset
 from huggingface_hub import hf_hub_download
@@ -113,6 +114,19 @@ def sample_bucket(ds, bucket, train_size, valid_size, seed):
     return train_part, valid_part, len(filtered)
 
 
+def get_all_configs_with_fallback(dataset_name, retries=3, base_wait_seconds=2):
+    for attempt in range(retries):
+        try:
+            return get_dataset_config_names(dataset_name) or []
+        except Exception as e:
+            if attempt == retries - 1:
+                print(f"get_dataset_config_names failed, fallback to file mode. error={e}")
+                return []
+            wait_seconds = base_wait_seconds * (attempt + 1)
+            print(f"get_dataset_config_names failed (attempt={attempt + 1}/{retries}), retry in {wait_seconds}s. error={e}")
+            time.sleep(wait_seconds)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset_name", type=str, default="SylvanL/Traditional-Chinese-Medicine-Dataset-SFT")
@@ -134,7 +148,7 @@ def main():
         ("structPrescription", "SFT_structPrescription_92896.json", args.train_prescription, args.valid_prescription),
         ("medicalKnowledge_source2", "SFT_medicalKnowledge_source2_99334.json", args.train_knowledge2, args.valid_knowledge2),
     ]
-    all_configs = get_dataset_config_names(args.dataset_name) or []
+    all_configs = get_all_configs_with_fallback(args.dataset_name)
 
     train_parts = []
     valid_parts = []

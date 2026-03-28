@@ -13,9 +13,8 @@ CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0,1}"
 NPROC_PER_NODE="${NPROC_PER_NODE:-2}"
 PER_DEVICE_TRAIN_BATCH_SIZE="${PER_DEVICE_TRAIN_BATCH_SIZE:-1}"
 PER_DEVICE_EVAL_BATCH_SIZE="${PER_DEVICE_EVAL_BATCH_SIZE:-1}"
-NUM_GENERATIONS="${NUM_GENERATIONS:-2}"
-GRADIENT_ACCUMULATION_STEPS="${GRADIENT_ACCUMULATION_STEPS:-2}"
-MAX_PROMPT_LENGTH="${MAX_PROMPT_LENGTH:-768}"
+NUM_GENERATIONS="${NUM_GENERATIONS:-4}"
+GRADIENT_ACCUMULATION_STEPS="${GRADIENT_ACCUMULATION_STEPS:-4}"
 MAX_COMPLETION_LENGTH="${MAX_COMPLETION_LENGTH:-384}"
 
 if ! python -c "import weave" >/dev/null 2>&1; then
@@ -27,7 +26,7 @@ fi
 torchrun --nproc_per_node "${NPROC_PER_NODE}" training/grpo_training.py \
     --model_name_or_path /root/autodl-fs/Qwen2.5-3B-TCM-SFT \
     --train_file_dir /root/medical/grpo_tcm \
-    --train_samples -1 \
+    --train_samples 2000 \
     --max_steps -1 --num_train_epochs 1 \
     --save_steps 50 \
     --save_strategy steps \
@@ -55,7 +54,6 @@ torchrun --nproc_per_node "${NPROC_PER_NODE}" training/grpo_training.py \
     --per_device_eval_batch_size "${PER_DEVICE_EVAL_BATCH_SIZE}" \
     --num_generations "${NUM_GENERATIONS}" \
     --gradient_accumulation_steps "${GRADIENT_ACCUMULATION_STEPS}" \
-    --max_prompt_length "${MAX_PROMPT_LENGTH}" \
     --max_completion_length "${MAX_COMPLETION_LENGTH}"
 
 echo "GRPO 训练完成!"
