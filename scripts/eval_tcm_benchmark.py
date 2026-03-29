@@ -62,6 +62,8 @@ def evaluate_model(model_path, data_path, output_path):
             with torch.no_grad():
                 generated_ids = model.generate(
                     model_inputs.input_ids,
+                    attention_mask=model_inputs.attention_mask,
+                    pad_token_id=tokenizer.eos_token_id,
                     max_new_tokens=10,
                     temperature=0.1, # 低温，降低随机性
                     do_sample=False

@@ -1,0 +1,1158 @@
+{
+    "2024_TCM_Pharmacist": {
+        "accuracy": 0.40625,
+        "correct": 65,
+        "total": 160,
+        "details": [
+            {
+                "question": "1. 属于劣药的是",
+                "gold": "D",
+                "pred": "A",
+                "raw_response": "A",
+                "is_correct": false
+            },
+            {
+                "question": "2. 健康中国的战略主题是",
+                "gold": "D",
+                "pred": "C",
+                "raw_response": "C",
+                "is_correct": false
+            },
+            {
+                "question": "3. 根据《关于加强含麻黄碱类复方制剂管理事宜的通知》，下列错误的是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": true
+            },
+            {
+                "question": "4. 经营第二类医疗器械应",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "C: 向设区的市级药品监督管理",
+                "is_correct": true
+            },
+            {
+                "question": "5. 药品的包装标签中可以印制的是",
+                "gold": "C",
+                "pred": "B",
+                "raw_response": "B: 权威机构监制",
+                "is_correct": false
+            },
+            {
+                "question": "6. 不属于寄递配送单必须载明的信息是",
+                "gold": "D",
+                "pred": "D",
+                "raw_response": "D",
+                "is_correct": true
+            },
+            {
+                "question": "7. 不属于国家野生保护药材的是",
+                "gold": "D",
+                "pred": "D",
+                "raw_response": "D: 黄芪",
+                "is_correct": true
+            },
+            {
+                "question": "8. 根据行政诉讼法,经过行政复议的案件，公民或者法人不服的，可以向人民法院起诉，是在收到复议决议书的",
+                "gold": "C",
+                "pred": null,
+                "raw_response": "根据行政诉讼法，经过行政复议的",
+                "is_correct": false
+            },
+            {
+                "question": "9. 关于特殊配方食品与婴幼儿的配方食品说法错误的是",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "C",
+                "is_correct": true
+            },
+            {
+                "question": "10. 根据药品监控合理用药药品的管理相关规定，下列目录中药品全部进行重点监控的是",
+                "gold": "D",
+                "pred": "C",
+                "raw_response": "C: 通过仿制药一致性评价药品目录",
+                "is_correct": false
+            },
+            {
+                "question": "11. 国家法规体系包括法律、行政法规、部门法规、规范性文件等。下列属于部门规章的是",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "C: 《药品注册管理办法》",
+                "is_correct": true
+            },
+            {
+                "question": "12. 关于药品注册管理的说法错误的是",
+                "gold": "C",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": false
+            },
+            {
+                "question": "13. 根据医院中药饮片管理规范，二级医院直接从事中药技术工作的人员配备要求是",
+                "gold": "A",
+                "pred": "D",
+                "raw_response": "D",
+                "is_correct": false
+            },
+            {
+                "question": "14. 根据违反违法使用医疗保障基金举报奖励办法，经查实举报奖励条件的举报，医疗保障行政部门应当规定予以奖励。下列情形属于奖励条件的是",
+                "gold": "A",
+                "pred": "A",
+                "raw_response": "A",
+                "is_correct": true
+            },
+            {
+                "question": "15. 根据药品经营质量管理规范，同一批号药品应至少检查一个最小包装，除",
+                "gold": "D",
+                "pred": "D",
+                "raw_response": "D",
+                "is_correct": true
+            },
+            {
+                "question": "16. 组织开展药品不良反应监测巡查工作的机构是",
+                "gold": "A",
+                "pred": "A",
+                "raw_response": "A: 国家药品监督管理局药品评价",
+                "is_correct": true
+            },
+            {
+                "question": "17. 根据药品经营和使用质量管理办法，药品批发企业的购销流程中，药品批发企业应该保存供货单位资质证明，销售凭证，保存期限为",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": true
+            },
+            {
+                "question": "18. 药品零售企业不得陈列的药品是",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "C: 第二类精神药品",
+                "is_correct": true
+            },
+            {
+                "question": "19. 广告审查机关应当向社会公开经审查批准的药品、医疗器械广告，其公开信息不包括",
+                "gold": "D",
+                "pred": "D",
+                "raw_response": "D: 发布人名称",
+                "is_correct": true
+            },
+            {
+                "question": "20. 不得作为医疗机构制剂申报的情形是",
+                "gold": "A",
+                "pred": "D",
+                "raw_response": "D",
+                "is_correct": false
+            },
+            {
+                "question": "21. 根据处方药和非处方药分类管理规定药品零售企业任何情形下都必须凭处方销售的药品是",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "C: 葡萄糖注射剂",
+                "is_correct": true
+            },
+            {
+                "question": "22. 关于仿制药质量和疗效一致性评价工作的说法，正确的是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": true
+            },
+            {
+                "question": "23. 关于药品网络零售的说法错误的是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": true
+            },
+            {
+                "question": "24. 根据执业药师注册管理办法，执业药师本人或者其执业单位应当知晓或者应当知晓之日起30个工作日内向药品管理监督申请办理注销执业药师注册证的情形是",
+                "gold": "B",
+                "pred": "A",
+                "raw_response": "A",
+                "is_correct": false
+            },
+            {
+                "question": "25. 要求应当具有医学、药学、生物学等相关专业本科以上学历或具备中级以上专业技术职称，且有3年以上从事疫苗管理或技术工作经验的岗位是",
+                "gold": "B",
+                "pred": "C",
+                "raw_response": "C: 疫苗上市许可持有人的质量",
+                "is_correct": false
+            },
+            {
+                "question": "26. 根据国家发展和改革委员会第六部委，关于印发推进药品价格改革意见的通知，决定从2015年6月1日取消绝大部分药品的",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B: 政府定价",
+                "is_correct": true
+            },
+            {
+                "question": "27. 以欺骗、贿赂等不正当手段取得《执业药师注册证》的，可采取的措施是",
+                "gold": "A",
+                "pred": "A",
+                "raw_response": "A",
+                "is_correct": true
+            },
+            {
+                "question": "28. 关于药品召回调查评估说法错误的是",
+                "gold": "A",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": false
+            },
+            {
+                "question": "29. 处方开具当日有效，如需延长，最长不得超过",
+                "gold": "B",
+                "pred": "C",
+                "raw_response": "C: 7天",
+                "is_correct": false
+            },
+            {
+                "question": "30. 关于药品召回的说法错误的是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": true
+            },
+            {
+                "question": "31. 根据短缺药品报告制度，下列说法错误的是",
+                "gold": "D",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": false
+            },
+            {
+                "question": "32. 关于药物警戒的说法，错误的是",
+                "gold": "D",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": false
+            },
+            {
+                "question": "33. 关于药物非临床安全性评价研究的说法，错误的是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": true
+            },
+            {
+                "question": "34. 关于医疗机构药品库存管理，说法错误的是",
+                "gold": "D",
+                "pred": "D",
+                "raw_response": "D",
+                "is_correct": true
+            },
+            {
+                "question": "35. 关于药品检查的说法，错误的是",
+                "gold": "D",
+                "pred": "C",
+                "raw_response": "C",
+                "is_correct": false
+            },
+            {
+                "question": "36. 下列关于疫苗委托生产错误的是",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "C",
+                "is_correct": true
+            },
+            {
+                "question": "37. 下列关于临床药物的管理，说法错误的是",
+                "gold": "D",
+                "pred": "D",
+                "raw_response": "D",
+                "is_correct": true
+            },
+            {
+                "question": "38. 关于医疗机构处方管理，错误的是",
+                "gold": "D",
+                "pred": "C",
+                "raw_response": "C",
+                "is_correct": false
+            },
+            {
+                "question": "39. 下列关于中药材和中药饮片说法错误的是",
+                "gold": "D",
+                "pred": "A",
+                "raw_response": "A",
+                "is_correct": false
+            },
+            {
+                "question": "40. 以下不全是第二类精神药品的是",
+                "gold": "C",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": false
+            },
+            {
+                "question": "1.属于“阳脉之海”的是",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "答案是C: 督脉。",
+                "is_correct": true
+            },
+            {
+                "question": "2.《中国药典》“凡例”中贮藏项下各名词术语进行了解释,关于中药贮藏名词说法，正确的是",
+                "gold": "C",
+                "pred": "B",
+                "raw_response": "B: 遮光系指避免日",
+                "is_correct": false
+            },
+            {
+                "question": "3. 由唐代孙思邈撰著，在序例中著有“大医习业”“大医精诚”两篇专论的典籍是",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "C: 《千金要方》",
+                "is_correct": true
+            },
+            {
+                "question": "4. 某女，40岁，肢体肌肉酸楚、重着，疼痛,肿胀,活动不利，口中黏腻,舌苔白腻，脉濡缓。治疗宜的基础方剂是",
+                "gold": "A",
+                "pred": "B",
+                "raw_response": "B: 独活寄生汤",
+                "is_correct": false
+            },
+            {
+                "question": "5. 关于中药注射剂使用原则的说法，错误的是",
+                "gold": "A",
+                "pred": "A",
+                "raw_response": "A",
+                "is_correct": true
+            },
+            {
+                "question": "6.下列治疗感冒的用药方案合理的是",
+                "gold": "D",
+                "pred": "C",
+                "raw_response": "C",
+                "is_correct": false
+            },
+            {
+                "question": "7.关于中药饮片处方用药适宜性的说法，错误的是",
+                "gold": "E",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": false
+            },
+            {
+                "question": "8.某女，48岁，月经紊乱，腰脊冷痛，肢软无力，神疲体倦。浮肿便溏，舌淡嫩苔白润，脉细弱，治疗宜选用的基础方剂是",
+                "gold": "D",
+                "pred": "B",
+                "raw_response": "B: 左归丸合二至丸",
+                "is_correct": false
+            },
+            {
+                "question": "9.某女，28岁。乳房肿痛，皮肤红灼热，继之肿块变软,有应指感，伴身热口渴，溲赤便秘，舌红苔黄腻,脉洪数。辨析其证候是",
+                "gold": "D",
+                "pred": "B",
+                "raw_response": "B: 气滞热壅",
+                "is_correct": false
+            },
+            {
+                "question": "10.不属于实证的临床表现是",
+                "gold": "C",
+                "pred": "A",
+                "raw_response": "答案是A：神昏谵语。神",
+                "is_correct": false
+            },
+            {
+                "question": "11. 寒极生热，热极生寒的体现的阴阳关系是",
+                "gold": "A",
+                "pred": "A",
+                "raw_response": "答案是A: 转化。",
+                "is_correct": true
+            },
+            {
+                "question": "12. 某女，52岁，咳嗽日久,少痰咳甚。五心烦热，颧红，耳鸣，神疲消瘦，舌红少苔，脉细数。治疗易选用的基础方剂",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B: 沙参麦冬汤",
+                "is_correct": true
+            },
+            {
+                "question": "13. 藏药以五元学说和味、性、效理论为导，形成独具特色的理论体系。其中功效为轻、糙、凉、锐、浮、可用于医治赤巴病、麻风、晕眩、瘟疫等疾病的药味是",
+                "gold": "D",
+                "pred": "D",
+                "raw_response": "答案是D：苦味。",
+                "is_correct": true
+            },
+            {
+                "question": "14.“壮水之主，以制阳光”的治法适用于",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B: 虚热证",
+                "is_correct": true
+            },
+            {
+                "question": "15.下列正别名错误的是",
+                "gold": "C",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": false
+            },
+            {
+                "question": "16.五色主病理论中，热证对应的颜色是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B: 赤色",
+                "is_correct": true
+            },
+            {
+                "question": "17.根据中药斗谱编排要求，不能摆放在一起的是",
+                "gold": "D",
+                "pred": "A",
+                "raw_response": "答案是A: 陈皮和青皮",
+                "is_correct": false
+            },
+            {
+                "question": "18.下列中西药联用，起到协同作用的是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": true
+            },
+            {
+                "question": "19.某男，68岁，眩晕日久不愈，精神萎靡，目涩耳鸣，视物模糊，腰膝酸软，五心烦热，舌红少苔，脉细数。治疗宜选用的基础方剂是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B: 左归丸",
+                "is_correct": true
+            },
+            {
+                "question": "20.某女，71岁。胸痹心痛8年，加重3天。心胸疼痛，痛如针刺而有定处，入夜为甚，伴胸闷、心悸;舌紫暗，脉弦涩。治疗宜选用的中成药是",
+                "gold": "D",
+                "pred": "B",
+                "raw_response": "B: 芪苈强心胶囊",
+                "is_correct": false
+            },
+            {
+                "question": "21.口疮心脾积热证常以凉膈散为基础方剂加减治疗，关于该方用药指导的访法，错误的是",
+                "gold": "E",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": false
+            },
+            {
+                "question": "22.某男，28岁、因发热、恶寒，咽痛、咳嗽，血常规检查显示:白细胞计数12.2x10^9/L，中性粒细胞计数9.5x10^9/L，白细胞和中性粒细胞均增多，其临床意义是",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "C: 细菌感染",
+                "is_correct": true
+            },
+            {
+                "question": "23.某女，68岁，大便秘结，脘腹痞满,不思饮食,口唇干燥,面无华，舌红少苔，脉细涩。宜采用的治法",
+                "gold": "E",
+                "pred": "E",
+                "raw_response": "E: 润燥缓下法",
+                "is_correct": true
+            },
+            {
+                "question": "24.某女，23岁。周身皮肤多发风团，色鲜红，灼热剧痒，遇热则剧，得冷则减，伴发热，咽喉肿痛，舌苔黄，脉浮数。诊断为瘾疹，其证候是",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "C: 风热犯表",
+                "is_correct": true
+            },
+            {
+                "question": "25.具有调畅排精行经生理功能的脏是",
+                "gold": "B",
+                "pred": "D",
+                "raw_response": "答案是D: 肾。",
+                "is_correct": false
+            },
+            {
+                "question": "26.某男，3岁，不思进食，食少饮多，皮肤失润，大便偏干，手足心热。苔花剥，脉细数，治疗宜选用的基础方剂是",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "C: 养胃增液汤",
+                "is_correct": true
+            },
+            {
+                "question": "27.宜热服的方剂是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B: 桂枝汤",
+                "is_correct": true
+            },
+            {
+                "question": "28.某男，31岁，鼻塞，流涕黄浊黏稠,味臭，头痛头昏，口苦咽干，耳鸣,舌红苔黄,脉弦数。诊鼻渊、证属胆经郁热。治疗用的中成药是",
+                "gold": "C",
+                "pred": "B",
+                "raw_response": "B: 鼻渊通窍颗粒",
+                "is_correct": false
+            },
+            {
+                "question": "29.某女，25岁，经量少，经期后，气乏力，头晕;舌淡、脉虚弱。诊断为月经过少，证属气血亏虚。治疗选用的中成药是",
+                "gold": "E",
+                "pred": "B",
+                "raw_response": "B: 复方益母草膏",
+                "is_correct": false
+            },
+            {
+                "question": "30.根据《中国药典》收载的毒性药材和饮片内容，含毒性饮片的中成药是",
+                "gold": "A",
+                "pred": "E",
+                "raw_response": "E: 舒肝和胃丸",
+                "is_correct": false
+            },
+            {
+                "question": "31.肝阳上亢头痛的特点是",
+                "gold": "E",
+                "pred": "B",
+                "raw_response": "B: 刺痛",
+                "is_correct": false
+            },
+            {
+                "question": "32.下列中成药联用，不存在相同毒性成分叠加风险的是",
+                "gold": "A",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": false
+            },
+            {
+                "question": "33.根据中药七情配伍，相畏的药组是",
+                "gold": "C",
+                "pred": "B",
+                "raw_response": "B: 黄芩，生姜",
+                "is_correct": false
+            },
+            {
+                "question": "34.某男，34岁，外感发热，微恶风寒，鼻塞，流黄浊涕，无汗，头痛，口干，咳嗽，咽喉疼痛;舌红苔薄黄，脉浮数。宜选用的中成药是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B: 银翘解毒丸",
+                "is_correct": true
+            },
+            {
+                "question": "35.马钱子中毒表现不包括",
+                "gold": "E",
+                "pred": "C",
+                "raw_response": "答案是C：角弓反张。马",
+                "is_correct": false
+            },
+            {
+                "question": "36. 根据《中国药典》规定特殊调剂，用法，煎法错误的是",
+                "gold": "A",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": false
+            },
+            {
+                "question": "37. 与中药合理用药基本原则不符的是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": true
+            },
+            {
+                "question": "38. 患者肌肤不仁，手足麻木，突然发生口眼歪斜语言不利，口角流涎，舌强语謇，半身不遂，证属风痰入络，应选用",
+                "gold": "A",
+                "pred": "B",
+                "raw_response": "B: 全天麻胶囊",
+                "is_correct": false
+            },
+            {
+                "question": "39. 因治疗需要，医师会应用不同术语，中药饮片的产地、炮制、质量等特殊要求在处方以注明。下列说法正确的是",
+                "gold": "E",
+                "pred": "C",
+                "raw_response": "C: 为标明药材产地，处方绵",
+                "is_correct": false
+            },
+            {
+                "question": "40. 某女，56岁。患高血脂，服用辛伐他汀。又因颈椎、腰椎疼痛服用仙灵骨葆胶囊，每日2次，每次3粒，一段时间后出现眼黄、尿黄、乏力、纳差。查肝生化指标:总胆红素(STB)63umol/L,谷氨酸氨基转移酶(ALT)832U/L、门冬氨酸氨基转移酶(AST)744U/L;查肝炎病毒学、自身免疫性肝炎指标，均呈阴性。该不良反应与仙灵骨葆胶囊的关联性评价为",
+                "gold": "C",
+                "pred": "B",
+                "raw_response": "B: 很可能",
+                "is_correct": false
+            },
+            {
+                "question": "1.某男，48岁，患慢性肠炎10年，症见腹痛绵绵、大便清稀有黏液血便、食少腹胀、腰酸乏力、形寒肢冷，舌淡苔白、脉虚。宜选用的成药是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B: 固本益肠片",
+                "is_correct": true
+            },
+            {
+                "question": "2.某男，50岁。患风湿痹痛5年，近日又见风疹瘙痒，宜选用的药是",
+                "gold": "B",
+                "pred": "C",
+                "raw_response": "答案是C: 丝瓜络。",
+                "is_correct": false
+            },
+            {
+                "question": "3.某男，42岁。素体虚弱，症见食少便溏气短咳嗽、肢备乏力。治当补脾胃、益肺气，宜选用的成药是",
+                "gold": "A",
+                "pred": "B",
+                "raw_response": "B: 六君子丸",
+                "is_correct": false
+            },
+            {
+                "question": "4.既治食积不化、消化不良，又治肝郁气滞药是",
+                "gold": "E",
+                "pred": "A",
+                "raw_response": "答案是A：香附。",
+                "is_correct": false
+            },
+            {
+                "question": "5.某男，56岁，症见脘腹冷痛、泄泻，又出现龋齿牙痛，宜选用的药是",
+                "gold": "D",
+                "pred": "C",
+                "raw_response": "答案是C: 花椒。",
+                "is_correct": false
+            },
+            {
+                "question": "6.某男，50岁，惠久泻久痢，近日又见遗精尿频。宜选用的药是",
+                "gold": "E",
+                "pred": "C",
+                "raw_response": "答案是C: 呵子。",
+                "is_correct": false
+            },
+            {
+                "question": "7.某男，65岁，有癫痫病史，近日时有惊悸失眠，伴小便不利，选",
+                "gold": "B",
+                "pred": "C",
+                "raw_response": "答案：C",
+                "is_correct": false
+            },
+            {
+                "question": "8.关于五苓散配伍意义的说法错误的是",
+                "gold": "E",
+                "pred": "E",
+                "raw_response": "E",
+                "is_correct": true
+            },
+            {
+                "question": "9.六神丸除能清热解毒外，又能",
+                "gold": "E",
+                "pred": "A",
+                "raw_response": "答案是A：化腐止痛。",
+                "is_correct": false
+            },
+            {
+                "question": "10.辛散苦泄，寒清滑利，既清散风热而解表、透疹，又宣肺祛痰而利咽、止陔，还滑利二便的是",
+                "gold": "D",
+                "pred": "B",
+                "raw_response": "答案是B: 香薷。",
+                "is_correct": false
+            },
+            {
+                "question": "11.某女，65岁。症见胸胁店闷食滞不消呕吐酸水，医师处以柴胡舒肝丸是因其既能舒肝理气，又能",
+                "gold": "A",
+                "pred": "B",
+                "raw_response": "答案：B",
+                "is_correct": false
+            },
+            {
+                "question": "12.清开灵颗粒的功能是",
+                "gold": "E",
+                "pred": "A",
+                "raw_response": "A: 清热解毒，豁痰",
+                "is_correct": false
+            },
+            {
+                "question": "13.因组方中含有全蝎、蜈蚣土鳖虫等有毒药、不宜多服、久服，孕妇禁用的成药是",
+                "gold": "A",
+                "pred": "B",
+                "raw_response": "B: 九气拈痛丸",
+                "is_correct": false
+            },
+            {
+                "question": "14.某女，45岁，患瘰疬3年，近1周出现烦不安、心悸失眠、盗汗，宜选用的药是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B: 牡蛎",
+                "is_correct": true
+            },
+            {
+                "question": "15.既能泻水逐饮，又能破血消癥的药是",
+                "gold": "C",
+                "pred": "A",
+                "raw_response": "答案是A: 牵牛子。",
+                "is_correct": false
+            },
+            {
+                "question": "16.男，50岁，患慢性支气管炎，时有痰色白，近日因情志不畅，又见胸闷胁痛。",
+                "gold": "C",
+                "pred": "B",
+                "raw_response": "B: 荔枝核",
+                "is_correct": false
+            },
+            {
+                "question": "17.二陈丸处方的佐药是",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "答案是C: 茯苓。",
+                "is_correct": true
+            },
+            {
+                "question": "18.南瓜子治疗绦虫的服用剂量应选择",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "答案是C: 60-12",
+                "is_correct": true
+            },
+            {
+                "question": "19.舒筋活血片禁与含有强心苷类成分的西药同用，是因其含有",
+                "gold": "A",
+                "pred": null,
+                "raw_response": "舒筋活血片含有香加皮，",
+                "is_correct": false
+            },
+            {
+                "question": "20.常配清热凉血解毒药，用治斑疹色暗的药",
+                "gold": "A",
+                "pred": "C",
+                "raw_response": "答案是C: 鸡血藤。",
+                "is_correct": false
+            },
+            {
+                "question": "21.某女，40岁，闭经6个月，见面色黯黑、肌肤甲情、时见潮热、形体赢宜选用的成药是",
+                "gold": "C",
+                "pred": "B",
+                "raw_response": "B: 女金丸",
+                "is_correct": false
+            },
+            {
+                "question": "22.双黄连合剂与九味羌活丸的共同功能是",
+                "gold": "C",
+                "pred": "A",
+                "raw_response": "答案是A: 宣肺泄热。",
+                "is_correct": false
+            },
+            {
+                "question": "23.既能利尿通淋，又能破血通经的药是",
+                "gold": "D",
+                "pred": "C",
+                "raw_response": "答案是C: 小蓟。",
+                "is_correct": false
+            },
+            {
+                "question": "24.男，36岁，患湿热黄疸，兼心烦、尿赤，宜选用的配伍是",
+                "gold": "A",
+                "pred": "B",
+                "raw_response": "B: 栀子配淡豆豉",
+                "is_correct": false
+            },
+            {
+                "question": "25.能温肾补精、养益气，既治肾虚精亏之腰酸，又治气血两亏之面色萎黄，产后少乳的药是",
+                "gold": "A",
+                "pred": "C",
+                "raw_response": "C: 熟地黄",
+                "is_correct": false
+            },
+            {
+                "question": "26.能化瘀止血，又能利尿的药是",
+                "gold": "E",
+                "pred": "B",
+                "raw_response": "答案是B: 白茅根。",
+                "is_correct": false
+            },
+            {
+                "question": "27.苦杏仁与紫苏配伍后的功效是",
+                "gold": "E",
+                "pred": "A",
+                "raw_response": "A: 润肺下气，化",
+                "is_correct": false
+            },
+            {
+                "question": "28.女，5岁，风湿热邪蕴阻肌肤，见皮肤丘疹、水泡，瘙痒，宜用",
+                "gold": "A",
+                "pred": "A",
+                "raw_response": "A: 消风止痒颗粒",
+                "is_correct": true
+            },
+            {
+                "question": "29.既能益肾、固精、缩尿，又能养肝、明目的药是",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "C: 覆盆子",
+                "is_correct": true
+            },
+            {
+                "question": "30.男，24岁，暴发火眼，症见红肿作痛头晕目眩、眼边刺痒、大便燥结、小便赤，选用的成药是",
+                "gold": "D",
+                "pred": "B",
+                "raw_response": "B: 明目蒺藜丸",
+                "is_correct": false
+            },
+            {
+                "question": "31.越鞠丸的功能是",
+                "gold": "D",
+                "pred": "B",
+                "raw_response": "B: 疏肝理气，和",
+                "is_correct": false
+            },
+            {
+                "question": "32.蛇胆川贝散的功能是",
+                "gold": "D",
+                "pred": "C",
+                "raw_response": "答案是C: 降气，祛痰",
+                "is_correct": false
+            },
+            {
+                "question": "33.男，24岁，因多食生冷致不思饮食，胀气，舌苔白腻。证属寒湿阻滞、脾胃气滞，宜选用的药是",
+                "gold": "B",
+                "pred": "C",
+                "raw_response": "C: 苍术",
+                "is_correct": false
+            },
+            {
+                "question": "34.某男，20岁，夏季暴饮暴食，次目出现寒热头痛、胸闷恶心、吐泻腹痛，证属夏伤暑湿，宿食停滞，宜选用的成药是",
+                "gold": "D",
+                "pred": "B",
+                "raw_response": "B: 藿香正气水",
+                "is_correct": false
+            },
+            {
+                "question": "35.某男，6岁，患慢性腹泻，症见大便稀薄如水，腹痛，纳差，选",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B: 小儿泻速停颗粒",
+                "is_correct": true
+            },
+            {
+                "question": "36.蟾酥除能解毒消肿、止痛外，又能",
+                "gold": "D",
+                "pred": "B",
+                "raw_response": "B: 拔毒去腐",
+                "is_correct": false
+            },
+            {
+                "question": "37.龟鹿二仙膏的功能是",
+                "gold": "E",
+                "pred": "B",
+                "raw_response": "B: 滋阴益气，固",
+                "is_correct": false
+            },
+            {
+                "question": "38.某男，66岁，患肺燥咳嗽，症见痰黄而黏、胸闷、咽喉疼痛、声音嘶哑。宜选用的成药是",
+                "gold": "D",
+                "pred": "B",
+                "raw_response": "B: 养阴清肺音",
+                "is_correct": false
+            },
+            {
+                "question": "39.石菖蒲的功效是",
+                "gold": "D",
+                "pred": "A",
+                "raw_response": "答案是A：养心安神，化",
+                "is_correct": false
+            },
+            {
+                "question": "40.天麻丸的功能是",
+                "gold": "A",
+                "pred": "A",
+                "raw_response": "A",
+                "is_correct": true
+            },
+            {
+                "question": "1.炮制后毒性降低，具有温肾暖脾作用，用于心腹冷痛，虚寒吐泻的饮片是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B: 炮附片",
+                "is_correct": true
+            },
+            {
+                "question": "2.炮制可以改变或缓和药物的性能，炮制后性味由辛温变为苦凉的饮片是",
+                "gold": "D",
+                "pred": "B",
+                "raw_response": "B: 清半夏",
+                "is_correct": false
+            },
+            {
+                "question": "3.含强心苷类化学成分的药材是",
+                "gold": "E",
+                "pred": "C",
+                "raw_response": "答案是C: 合欢皮。",
+                "is_correct": false
+            },
+            {
+                "question": "4.结构类型属于有机胺类生物碱的化合物是",
+                "gold": "B",
+                "pred": "A",
+                "raw_response": "答案是A：小檗碱。",
+                "is_correct": false
+            },
+            {
+                "question": "5.能够增加难溶性药物溶出速度，提高生物利用度的剂型是",
+                "gold": "D",
+                "pred": "D",
+                "raw_response": "答案是D：滴丸。滴丸是",
+                "is_correct": true
+            },
+            {
+                "question": "6.藿香正气水的剂型是",
+                "gold": "D",
+                "pred": "A",
+                "raw_response": "答案是A: 口服液。",
+                "is_correct": false
+            },
+            {
+                "question": "7.粉末显微鉴别可见纤维鲜黄色，常成束，周围细胞含草酸钙方晶，形成晶纤维，石细胞鲜黄色，类圆形，纺锤形或呈分枝状，壁厚，竖纹明显的药材是",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "C: 黄柏",
+                "is_correct": true
+            },
+            {
+                "question": "8.图示中药为半枝莲的是",
+                "gold": "A",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": false
+            },
+            {
+                "question": "9.图示中药为自然铜的是",
+                "gold": "A",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": false
+            },
+            {
+                "question": "10. 图示中药为决明子的是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": true
+            },
+            {
+                "question": "11. 图示中药为知母的是",
+                "gold": "A",
+                "pred": "A",
+                "raw_response": "答案是A。",
+                "is_correct": true
+            },
+            {
+                "question": "12. 《中国药典》规定，以二苯乙烯苷和结合蒽醌为指标成分进行测定的药材是",
+                "gold": "C",
+                "pred": "B",
+                "raw_response": "B: 丹参",
+                "is_correct": false
+            },
+            {
+                "question": "13. 花蕾期由绿色转为红色时采摘晒干的药材有是",
+                "gold": "E",
+                "pred": "B",
+                "raw_response": "B: 红花",
+                "is_correct": false
+            },
+            {
+                "question": "14. 《中国药典》规定，以异嗪皮啶，迷迭香酸为指标成分的药材是",
+                "gold": "E",
+                "pred": "A",
+                "raw_response": "答案是A: 前胡。",
+                "is_correct": false
+            },
+            {
+                "question": "15. 《中国药典》规定，二氧化硫残留量不得过10mg/kg的药材是",
+                "gold": "D",
+                "pred": "C",
+                "raw_response": "答案是C: 天冬。",
+                "is_correct": false
+            },
+            {
+                "question": "16. 产地加工时要置沸水中略烫的药材是",
+                "gold": "C",
+                "pred": "A",
+                "raw_response": "答案是A: 红参。",
+                "is_correct": false
+            },
+            {
+                "question": "17. 药用部位为块根入药的是",
+                "gold": "A",
+                "pred": "C",
+                "raw_response": "答案是C: 虎杖。",
+                "is_correct": false
+            },
+            {
+                "question": "18. 为我国历史上第一部药典性本草，也被誉为世界上第一部药典的是",
+                "gold": "C",
+                "pred": "B",
+                "raw_response": "B: 《神农本草经》",
+                "is_correct": false
+            },
+            {
+                "question": "19. 五味对人体有不同效用，效用为能泄，能坚，能燥的药味是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "答案是B: 苦。",
+                "is_correct": true
+            },
+            {
+                "question": "20. 关于煎膏剂质量要求和临床应用注意事项的说法，错误的是",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "C",
+                "is_correct": true
+            },
+            {
+                "question": "21. 中药在切制时通常需要进行水处理软化、适宜的软化方法有利于保证饮片质量。采用淋法软化的药材是",
+                "gold": "D",
+                "pred": "C",
+                "raw_response": "答案是C: 昆布。",
+                "is_correct": false
+            },
+            {
+                "question": "22. 炉甘石洗剂处方：炉甘石 150g，氧化锌 50g，甘油 50ml，羧甲纤维素钠 2.5g，纯化水加至 1000ml，方中羧甲纤维素钠是用作",
+                "gold": "B",
+                "pred": null,
+                "raw_response": "炉甘石洗剂处方中，羧甲",
+                "is_correct": false
+            },
+            {
+                "question": "23. 为不规则的厚片，外表面黑褐色或棕褐色，粗糙不平，有的可见须根痕或坚硬的细须根残留，切面具有网状或放射状纹理；体轻，质硬，纤维性；气微，味微苦而涩的饮片是",
+                "gold": "B",
+                "pred": "C",
+                "raw_response": "C: 威灵仙",
+                "is_correct": false
+            },
+            {
+                "question": "24. 所含主要生物碱均为异喹啉类化合物的药材组别是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B: 黄连和防己",
+                "is_correct": true
+            },
+            {
+                "question": "25. 可用于确定分子量的鉴定方法是",
+                "gold": "A",
+                "pred": "A",
+                "raw_response": "A: 质谱",
+                "is_correct": true
+            },
+            {
+                "question": "26. 关于蒲黄炭炮制方法及作用的说法，错误的是",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "C",
+                "is_correct": true
+            },
+            {
+                "question": "27.连翘中主要化学成分连翘苷的结构类型是",
+                "gold": "E",
+                "pred": "C",
+                "raw_response": "答案是C: 倍半萜类",
+                "is_correct": false
+            },
+            {
+                "question": "28.关于栓剂特点和质量要求的说法，错误的是",
+                "gold": "A",
+                "pred": "A",
+                "raw_response": "A",
+                "is_correct": true
+            },
+            {
+                "question": "29.《中国药典》规定，以东莨菪碱和莨菪碱为含量测定指标成分的药材是",
+                "gold": "C",
+                "pred": "B",
+                "raw_response": "B: 千里光",
+                "is_correct": false
+            },
+            {
+                "question": "30.呈不规则的块状和脂膏状，具强烈而持久的特异臭气的药材是",
+                "gold": "D",
+                "pred": "B",
+                "raw_response": "答案是B: 乳香。",
+                "is_correct": false
+            },
+            {
+                "question": "31.经黏膜给药的速效剂型是",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "B: 舌下片",
+                "is_correct": true
+            },
+            {
+                "question": "32.鉴别药材组织中草酸钙结晶的方法是",
+                "gold": "E",
+                "pred": "E",
+                "raw_response": "E",
+                "is_correct": true
+            },
+            {
+                "question": "33.关于片剂临床应用注意事项的说法，错误的是",
+                "gold": "E",
+                "pred": "C",
+                "raw_response": "C",
+                "is_correct": false
+            },
+            {
+                "question": "34.固体分散体中药物的分散状态不包括",
+                "gold": "B",
+                "pred": "E",
+                "raw_response": "E",
+                "is_correct": false
+            },
+            {
+                "question": "35.关于药物透皮吸收影响因素的说法，错误的是",
+                "gold": "D",
+                "pred": "B",
+                "raw_response": "B",
+                "is_correct": false
+            },
+            {
+                "question": "36.取火柴杆浸入本品水浸液中，使轻微着色，待干燥后，再浸入盐酸中立即取出，置火焰附近烘烤，杆上即显深红色的药材是",
+                "gold": "E",
+                "pred": "B",
+                "raw_response": "B: 青黛",
+                "is_correct": false
+            },
+            {
+                "question": "37.绵马贯众的原植物属于",
+                "gold": "B",
+                "pred": "B",
+                "raw_response": "答案是B: 鳞毛蕨科",
+                "is_correct": true
+            },
+            {
+                "question": "38.呈类圆形或椭圆形厚片，外表皮灰黄或灰棕色，切面黄绿色、黄棕色或棕褐色，内皮层环纹明显，散在“筋脉”小点的饮片是",
+                "gold": "C",
+                "pred": "C",
+                "raw_response": "答案是C: 莪术。",
+                "is_correct": true
+            },
+            {
+                "question": "39.可作为眼用制剂黏度调节剂的是",
+                "gold": "E",
+                "pred": "E",
+                "raw_response": "E: 甲基纤维素",
+                "is_correct": true
+            },
+            {
+                "question": "40.颗粒剂粒度检查时，除另有规定外，不能通过一号筛与能通过五号筛的总和不得过",
+                "gold": "A",
+                "pred": "A",
+                "raw_response": "答案是A: 15%。",
+                "is_correct": true
+            }
+        ]
+    },
+    "2024_TCM_Physician": {
+        "accuracy": 0,
+        "correct": 0,
+        "total": 0,
+        "details": []
+    },
+    "2024_TCM_Assistant_Physician": {
+        "accuracy": 0,
+        "correct": 0,
+        "total": 0,
+        "details": []
+    },
+    "2024_TCM_Graduate_Entrance": {
+        "accuracy": 0,
+        "correct": 0,
+        "total": 0,
+        "details": []
+    },
+    "2025_TCM_Graduate_Entrance": {
+        "accuracy": 0,
+        "correct": 0,
+        "total": 0,
+        "details": []
+    },
+    "overall": {
+        "accuracy": 0.40625,
+        "correct": 65,
+        "total": 160
+    }
+}

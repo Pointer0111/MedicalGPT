@@ -18,6 +18,16 @@ def to_grpo_example(row):
     instruction = first_existing(row, ["instruction", "question", "prompt", "query"])
     user_input = first_existing(row, ["input", "context"])
     answer = first_existing(row, ["output", "answer", "response", "target", "completion"])
+    
+    # 替换可能抑制思维链的指令前缀
+    suppress_prefixes = [
+        "直接给出你认为的",
+        "直接给出你的",
+    ]
+    for prefix in suppress_prefixes:
+        if prefix in instruction:
+            instruction = instruction.replace(prefix, "请详细分析并给出你认为的")
+            
     question = instruction
     if user_input:
         question = f"{instruction}\n\n{user_input}" if instruction else user_input
@@ -48,14 +58,10 @@ def detect_bucket(row):
         ]
     ).lower()
     text = f"{meta}\n{instruction}\n{user_input}\n{answer}"
-    if "nlpdiseasediagnosed" in text or ("疾病诊断" in instruction and "证型" not in instruction):
-        return "disease"
-    if "nlpsyndromediagnosed" in text or "证型诊断" in instruction:
-        return "syndrome"
+    if "structgeneral" in text or "治疗方案" in instruction:
+        return "general"
     if "structprescription" in text or "方剂中药组成" in instruction:
         return "prescription"
-    if "medicalknowledge_source2" in text or "术语" in instruction or "名词解释" in instruction:
-        return "knowledge2"
     return "other"
 
 
@@ -132,21 +138,15 @@ def main():
     parser.add_argument("--dataset_name", type=str, default="SylvanL/Traditional-Chinese-Medicine-Dataset-SFT")
     parser.add_argument("--output_dir", type=str, required=True)
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--train_disease", type=int, default=20000)
-    parser.add_argument("--train_syndrome", type=int, default=20000)
-    parser.add_argument("--train_prescription", type=int, default=6000)
-    parser.add_argument("--train_knowledge2", type=int, default=4000)
-    parser.add_argument("--valid_disease", type=int, default=400)
-    parser.add_argument("--valid_syndrome", type=int, default=400)
-    parser.add_argument("--valid_prescription", type=int, default=120)
-    parser.add_argument("--valid_knowledge2", type=int, default=80)
+    parser.add_argument("--train_general", type=int, default=30000)
+    parser.add_argument("--train_prescription", type=int, default=10000)
+    parser.add_argument("--valid_general", type=int, default=500)
+    parser.add_argument("--valid_prescription", type=int, default=200)
     args = parser.parse_args()
 
     source_plan = [
-        ("nlpDiseaseDiagnosed", "SFT_nlpDiseaseDiagnosed_61486.json", args.train_disease, args.valid_disease),
-        ("nlpSyndromeDiagnosed", "SFT_nlpSyndromeDiagnosed_48665.json", args.train_syndrome, args.valid_syndrome),
+        ("structGeneral", "SFT_structGeneral_310860.json", args.train_general, args.valid_general),
         ("structPrescription", "SFT_structPrescription_92896.json", args.train_prescription, args.valid_prescription),
-        ("medicalKnowledge_source2", "SFT_medicalKnowledge_source2_99334.json", args.train_knowledge2, args.valid_knowledge2),
     ]
     all_configs = get_all_configs_with_fallback(args.dataset_name)
 
@@ -170,10 +170,8 @@ def main():
                 source_ds = load_train_split(args.dataset_name, single_config)
                 converted_ds = convert_split_with_bucket(source_ds)
                 bucket_mapping = {
-                    "nlpDiseaseDiagnosed": "disease",
-                    "nlpSyndromeDiagnosed": "syndrome",
+                    "structGeneral": "general",
                     "structPrescription": "prescription",
-                    "medicalKnowledge_source2": "knowledge2",
                 }
                 bucket = bucket_mapping[source_key]
                 train_part, valid_part, bucket_total = sample_bucket(

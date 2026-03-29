@@ -4,7 +4,7 @@
 CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
 
 # 设置模型路径和数据路径
-MODEL_PATH="/root/autodl-fs/Qwen2.5-3B-TCM-SFT"
+MODEL_PATH="${1:-/root/autodl-fs/Qwen2.5-3B-TCM-GRPO-v1}"
 DATA_PATH="/root/MedicalGPT/TCM-Text-Exams.json"
 OUTPUT_PATH="/root/MedicalGPT/eval_results.json"
 
