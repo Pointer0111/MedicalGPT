@@ -116,9 +116,10 @@ def accuracy_reward(completions, answer, **kwargs):
 
 def format_reward(completions, **kwargs):
     """Reward function that checks if the completion has a specific format."""
-    pattern = r"<think>.*?</think><answer>.*?</answer>$"
+    pattern = r"^<think>.*?</think><answer>.*?</answer>$"
     completion_contents = [completion[0]["content"] for completion in completions]
-    matches = [re.match(pattern, content) for content in completion_contents]
+    # 使用 re.DOTALL 使得 .*? 可以匹配换行符
+    matches = [re.match(pattern, content, re.DOTALL) for content in completion_contents]
 
     rewards = [1.0 if match else 0.0 for match in matches]
     logger.debug(f'format rewards: {rewards}')
@@ -126,10 +127,10 @@ def format_reward(completions, **kwargs):
 
 
 SYSTEM_PROMPT = (
-    "A conversation between User and Assistant. The user asks a question, and the Assistant solves it. The assistant "
-    "first thinks about the reasoning process in the mind and then provides the user with the answer. The reasoning "
-    "process and answer are enclosed within <think> </think> and <answer> </answer> tags, respectively, i.e., "
-    "<think> reasoning process here </think><answer> answer here </answer>"
+    "A conversation between User and Assistant. The user asks a question, and the Assistant solves it. "
+    "You MUST enclose your reasoning process within <think> and </think> tags, "
+    "and then enclose your final answer within <answer> and </answer> tags. "
+    "For example: <think> I should first analyze the symptoms... </think><answer> The diagnosis is... </answer>"
 )
 
 
